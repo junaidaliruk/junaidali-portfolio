@@ -1,0 +1,364 @@
+/* 10-works.css — Works Section matching Studio Nika */
+
+/* ═══════════════════════════════════════════════════════════ */
+/* WORKS SECTION                                             */
+/* ═══════════════════════════════════════════════════════════ */
+.works-section {
+  position: relative;
+  padding: var(--space-24) 80px 120px;
+  overflow: hidden;
+  background: var(--color-bg);
+  contain: layout style;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* SECTION LABEL — "WORKS" small caps                         */
+/* ═══════════════════════════════════════════════════════════ */
+.works-label {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* SECTION HEADING — Large centered text                      */
+/* ═══════════════════════════════════════════════════════════ */
+.works-heading {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  color: var(--color-text);
+  text-align: center;
+  max-width: 900px;
+  margin-inline: auto;
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 810px) {
+  .works-heading {
+    font-size: clamp(36px, 5vw, 56px);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* SECTION SUBTITLE — Gray descriptive text                   */
+/* ═══════════════════════════════════════════════════════════ */
+.works-subtitle {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: var(--space-16);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* WORKS GRID — 2-column masonry layout                       */
+/* ═══════════════════════════════════════════════════════════ */
+.works-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* WORKS ROW — Flex row for 2 cards                           */
+/* ═══════════════════════════════════════════════════════════ */
+.works-row {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* WORK CARD — Individual project card                        */
+/* ═══════════════════════════════════════════════════════════ */
+.work-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+  min-width: 0;
+}
+
+/* All cards equal width */
+
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD IMAGE — Container with border                         */
+/* ═══════════════════════════════════════════════════════════ */
+.work-card__image {
+  position: relative;
+  width: 100%;
+  height: 288px;
+  aspect-ratio: 16 / 11;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #f0f0f0;
+  transition: transform 0.4s var(--ease-out);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD IMAGE — Website screenshot                            */
+/* ═══════════════════════════════════════════════════════════ */
+.work-card__image img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.4s var(--ease-out);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD CONTENT — Title + services                            */
+/* ═══════════════════════════════════════════════════════════ */
+.work-card__content {
+  padding: var(--space-3) 0 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD TITLE — Bold heading with arrow                       */
+/* ═══════════════════════════════════════════════════════════ */
+.work-card__title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 100%;
+  color: var(--color-text);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD ARROW — Slide animation on hover                      */
+/* ═══════════════════════════════════════════════════════════ */
+.work-card__arrow {
+  display: inline-block;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.work-card:hover .work-card__arrow {
+  transform: translateX(4px);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD SERVICES — Gray text below title                      */
+/* ═══════════════════════════════════════════════════════════ */
+.work-card__services {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin: var(--space-1) 0 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD META — Year, tech, achievement                        */
+/* ═══════════════════════════════════════════════════════════ */
+.work-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.work-card__meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.work-card__meta-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--color-border-strong);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* HOVER EFFECTS — Rotation like Studio Nika                  */
+/* ═══════════════════════════════════════════════════════════ */
+.work-card:hover .work-card__image {
+  transform: rotate(-1deg) scale(1.02);
+}
+
+.work-card:hover .work-card__image img {
+  transform: scale(1.05);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CTA SECTION — After works                                  */
+/* ═══════════════════════════════════════════════════════════ */
+.works-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-16);
+  text-align: center;
+}
+
+.works-cta__text {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* BOTTOM LINE — Decorative separator                         */
+/* ═══════════════════════════════════════════════════════════ */
+.works-line-bottom {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.06);
+  margin-top: var(--space-24);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* REDUCED MOTION — Accessibility                             */
+/* ═══════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .work-card__arrow,
+  .work-card__image,
+  .work-card__image img {
+    transition: none;
+  }
+
+  .work-card:hover .work-card__arrow {
+    transform: none;
+  }
+
+  .work-card:hover .work-card__image {
+    transform: none;
+  }
+
+  .work-card:hover .work-card__image img {
+    transform: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* RESPONSIVE — Mobile adjustments                            */
+/* ═══════════════════════════════════════════════════════════ */
+@media (max-width: 1023px) {
+  .works-section {
+    padding: var(--space-16) 24px 80px;
+  }
+
+  .works-heading {
+    font-size: clamp(32px, 6vw, 48px);
+  }
+
+  .works-row {
+    gap: 16px;
+  }
+
+  .work-card__image {
+    height: 240px;
+  }
+}
+
+@media (max-width: 767px) {
+  .works-section {
+    padding: var(--space-12) 16px 60px;
+  }
+
+  .works-grid {
+    gap: 20px;
+    max-width: 100%;
+    padding-inline: 0;
+  }
+
+  .works-row {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .work-card--large,
+  .work-card--small {
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .work-card__image {
+    height: 180px;
+    aspect-ratio: 16 / 10;
+    border-radius: 12px;
+  }
+
+  .work-card:hover .work-card__image {
+    transform: rotate(-1deg) scale(1.01);
+  }
+
+  .work-card__content {
+    text-align: center;
+  }
+
+  .work-card__title {
+    font-size: 16px;
+    justify-content: center;
+  }
+
+  .work-card__services {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .work-card__meta {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* RESPONSIVE — Very small screens (< 360px)                   */
+/* ═══════════════════════════════════════════════════════════ */
+@media (max-width: 360px) {
+  .works-section {
+    padding: var(--space-10) 12px 48px;
+  }
+
+  .work-card--large,
+  .work-card--small {
+    max-width: 320px;
+  }
+
+  .work-card__image {
+    height: 150px;
+    border-radius: 10px;
+  }
+
+  .work-card__title {
+    font-size: 15px;
+  }
+}

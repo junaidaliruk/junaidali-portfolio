@@ -1,0 +1,87 @@
+/* 05-animations.css — Scroll-Driven, View Transitions, Keyframes */
+
+/* ═══════════════════════════════════════════════════════ */
+/* KEYFRAMES                                            */
+/* ═══════════════════════════════════════════════════════ */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* ═══════════════════════════════════════════════════════ */
+/* HERO ANIMATIONS                                       */
+/* ═══════════════════════════════════════════════════════ */
+.hero-heading,
+.hero-rotating-wrapper,
+.hero-description,
+.hero-cta {
+  animation: fade-in-up 0.6s var(--ease-out) both;
+}
+
+.hero-heading { animation-delay: 0.1s; }
+.hero-rotating-wrapper { animation-delay: 0.2s; }
+.hero-description { animation-delay: 0.3s; }
+.hero-cta { animation-delay: 0.4s; }
+
+/* ═══════════════════════════════════════════════════════ */
+/* SCROLL REVEAL — Native CSS (Baseline 2025)           */
+/* ═══════════════════════════════════════════════════════ */
+@supports ((animation-timeline: view()) and (animation-range: entry)) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-reveal {
+      animation: fade-in-up auto linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* SCROLL REVEAL — JS Fallback (Firefox, older browsers) */
+/* ═══════════════════════════════════════════════════════ */
+.scroll-reveal-fallback {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.scroll-reveal-fallback.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* REDUCED MOTION                                       */
+/* ═══════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .hero-heading,
+  .hero-rotating-wrapper,
+  .hero-description,
+  .hero-cta {
+    animation: none;
+    opacity: 1;
+  }
+
+  .scroll-reveal,
+  .scroll-reveal-fallback {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

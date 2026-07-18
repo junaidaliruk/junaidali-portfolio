@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- ESSENTIAL META — Browser & Encoding                    -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SEO — Search engines read this                         -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <title>Junaid Ali — Fullstack Developer & Designer</title>
+  <meta name="description" content="Full-stack TypeScript developer building 
+    real-time apps, 3D websites, and AI-powered tools. Open source contributor 
+    with 200+ contributions." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://developer-junaid.vercel.app" />
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- OPEN GRAPH — Social sharing (LinkedIn, Facebook, etc)  -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Junaid Ali — Fullstack Developer" />
+  <meta property="og:description" content="Full-stack TypeScript developer building real-time apps, 3D websites, and AI-powered tools." />
+  <meta property="og:image" content="https://framerusercontent.com/images/NIVFJ7K67AUsJVjk1Uwwc7YsNBk.png" />
+  <meta property="og:url" content="https://developer-junaid.vercel.app" />
+  <meta property="og:site_name" content="Junaid Ali Portfolio" />
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TWITTER CARD — Social sharing (X / Twitter)            -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Junaid Ali — Fullstack Developer" />
+  <meta name="twitter:description" content="Full-stack TypeScript developer building real-time apps, 3D websites, and AI-powered tools." />
+  <meta name="twitter:image" content="https://framerusercontent.com/images/NIVFJ7K67AUsJVjk1Uwwc7YsNBk.png" />
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- THEME — Browser chrome & system UI                     -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <meta name="theme-color" content="#FAFAFA" />
+  <meta name="color-scheme" content="light" />
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- FAVICON — Browser tab icon                             -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- PRELOAD — LCP image for faster discovery               -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <link rel="preload" as="image" href="https://framerusercontent.com/images/lG7M5EXMdNTPVxIbmQKsK7Qh18.png?width=450" imagesrcset="https://framerusercontent.com/images/lG7M5EXMdNTPVxIbmQKsK7Qh18.png?width=300 300w, https://framerusercontent.com/images/lG7M5EXMdNTPVxIbmQKsK7Qh18.png?width=450 450w, https://framerusercontent.com/images/lG7M5EXMdNTPVxIbmQKsK7Qh18.png?width=600 600w" imagesizes="450px" fetchpriority="high" />
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- FONTS — Preconnect + non-render-blocking load         -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://framerusercontent.com" />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter+Display:ital,wght@0,100..900;1,100..900&family=Geist:wght@100..900&display=swap"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter+Display:ital,wght@0,100..900;1,100..900&family=Geist:wght@100..900&display=swap" />
+  </noscript>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- CRITICAL CSS — Inlined for fastest render             -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <style>
+    /* Critical above-the-fold CSS */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+    body{font-family:'Inter Display','Inter Display Placeholder','Geist',system-ui,sans-serif;background:#FAFAFA;color:#000414;line-height:1.5}
+    img,video,svg{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    .skip-link{position:absolute;top:-100%;left:1rem;z-index:500;padding:.75rem 1.5rem;background:#000;color:#fff;font-weight:500;border-radius:0 0 .5rem .5rem;transition:top .15s ease}
+    .skip-link:focus{top:0}
+    main{position:relative}
+    .section{position:relative;padding:5rem 0;content-visibility:auto;contain-intrinsic-size:auto 500px;contain:layout style paint}
+    .section--hero{border-bottom:1px solid rgba(0,0,0,.08);padding:70px 0 90px;min-height:420px}
+    .hero-container{width:100%;max-width:900px;margin-inline:auto;padding-inline:1.5rem;text-align:center}
+    .hero-heading{font-size:clamp(42px,4.5vw,60px);font-weight:600;line-height:1.05;letter-spacing:-.045em;color:#000414;margin:0}
+    .hero-rotating-wrapper{display:block;overflow:hidden;min-height:1.2em;margin-top:4px}
+    .hero-rotating-text{font-family:'Inter Display','Inter Display Placeholder',system-ui,sans-serif;font-size:clamp(42px,4.5vw,60px);font-weight:500;line-height:1.05;letter-spacing:-.045em;color:#000414;transform:translateY(0);opacity:1;transition:transform .4s cubic-bezier(.23,1,.32,1),opacity .3s cubic-bezier(.23,1,.32,1);will-change:transform,opacity}
+    .hero-rotating-text--exit{transform:translateY(-15px);opacity:0}
+    .hero-description{font-family:'Inter Display','Inter Display Placeholder',system-ui,sans-serif;font-size:18px;font-weight:500;line-height:1.2;letter-spacing:-.02em;color:rgba(0,0,0,.5);text-align:center;max-width:500px;margin-inline:auto;margin-top:24px}
+    .hero-desc-gray{color:#4a4a4a}
+    .hero-desc-bold{color:#000414;font-weight:400}
+    .hero-cta{margin-top:32px}
+    .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;width:240px;height:62px;font-size:14px;font-weight:700;color:#fff;border:none;border-radius:9999px;font-family:'Inter Display','Inter Display Placeholder',sans-serif;letter-spacing:.02em;text-decoration:none;background:0 0;cursor:pointer;overflow:hidden;isolation:isolate;padding:0;-webkit-tap-highlight-color:transparent}
+    .btn:focus{outline:0}
+    .btn:focus-visible{outline:2px solid #06f;outline-offset:4px;border-radius:9999px}
+    .btn:active{transform:scale(.98)}
+    .btn__bg{position:absolute;inset:0;background-color:#000;border-radius:inherit;border:1px solid rgba(0,0,0,.1);z-index:0;transition:background-color .3s ease}
+    .btn:hover .btn__bg{background-color:#111}
+    .btn__content{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;padding:0 50px;overflow:hidden}
+    .btn__text-mask{position:relative;display:flex;flex-direction:column;align-items:center;height:50px;overflow:hidden}
+    .btn__label{display:flex;align-items:center;justify-content:center;height:50px;white-space:pre;color:#fff;font-family:'Inter Display','Inter Display Placeholder',sans-serif;font-size:17px;font-weight:600;letter-spacing:.02em;line-height:1.2;transition:transform .5s cubic-bezier(.4,0,.2,1),opacity .3s ease}
+    .btn:hover .btn__label,.btn:focus-visible .btn__label{transform:translateY(-50px);opacity:0}
+    .btn__hover{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:10px;height:100%;opacity:0;pointer-events:none;transform:translateY(30px);transition:opacity .3s ease,transform .5s cubic-bezier(.4,0,.2,1)}
+    .btn:hover .btn__hover,.btn:focus-visible .btn__hover{opacity:1;transform:translateY(0)}
+    .btn__avatar-group{display:flex;align-items:center;gap:0}
+    .btn__avatar{width:50px;height:50px;border-radius:50%;overflow:hidden;opacity:0;filter:blur(5px);transform:rotate(-180deg);transition:all .5s cubic-bezier(.4,0,.2,1);margin-left:-15px}
+    .btn:hover .btn__avatar,.btn:focus-visible .btn__avatar{opacity:1;filter:blur(0);transform:rotate(0)}
+    .btn__avatar img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
+    .btn__avatar--you{background-color:#fff;display:flex;align-items:center;justify-content:center;transform:rotate(180deg)}
+    .btn:hover .btn__avatar--you,.btn:focus-visible .btn__avatar--you{transform:rotate(0)}
+    .btn__avatar-you-text{color:#000;font-size:12px;font-weight:800;letter-spacing:-.02em;text-transform:uppercase;line-height:1}
+    .btn__plus{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:18px;font-weight:600;letter-spacing:-.02em;opacity:0;transition:opacity .3s ease}
+    .btn:hover .btn__plus,.btn:focus-visible .btn__plus{opacity:0}
+    .btn__talk{white-space:pre;color:#fff;font-family:'Inter Display','Inter Display Placeholder',sans-serif;font-size:17px;font-weight:600;letter-spacing:.02em;line-height:1.2}
+    .ticker-section{position:relative;overflow:hidden;border-bottom:1px solid rgba(0,0,0,.08);padding:3rem 0;isolation:isolate;content-visibility:auto;contain-intrinsic-size:auto 320px}
+    .ticker-bg{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-10 40L40-10M0 40L40 0M10 40L40 10M20 40L40 20M30 40L40 30' stroke='%23000' stroke-opacity='0.06' stroke-width='0.5'/%3E%3C/svg%3E");background-repeat:repeat;background-size:40px 40px;pointer-events:none;z-index:0}
+    .ticker-viewport{position:relative;width:100%;overflow:hidden;z-index:1;cursor:grab}
+    .ticker-track{display:flex;gap:20px;width:max-content;will-change:transform;contain:layout style paint}
+    .ticker-item{flex-shrink:0;position:relative}
+    .ticker-item__inner{width:450px;height:320px;aspect-ratio:450/320;border-radius:1rem;overflow:hidden;border:1px solid rgba(0,0,0,.1);background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.08);transform:translateZ(0)}
+    .ticker-item__inner img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;content-visibility:auto;contain-intrinsic-size:309px 218px}
+    @media(max-width:767px){.ticker-item__inner{width:300px;height:213px}.ticker-track{gap:16px}.ticker-section{padding:2rem 0}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+  </style>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- NON-CRITICAL CSS — Loaded asynchronously              -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <link rel="preload" href="./globals.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="./globals.css" /></noscript>
+</head>
+
+<body>
+  <!-- React mounts here -->
+  <div id="root"></div>
+
+  <!-- Module script — Bun serves this with HMR in dev -->
+  <script type="module" src="./frontend.tsx" defer></script>
+</body>
+</html>

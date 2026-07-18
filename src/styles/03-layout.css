@@ -1,0 +1,61 @@
+/* 03-layout.css — Container, Grid, Section Spacing */
+
+/* ═══════════════════════════════════════════════════════ */
+/* CONTAINER                                            */
+/* ═══════════════════════════════════════════════════════ */
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: var(--space-12);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* MAIN ELEMENT                                         */
+/* ═══════════════════════════════════════════════════════ */
+main {
+  position: relative;
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* SECTION SPACING + PERFORMANCE                        */
+/* ═══════════════════════════════════════════════════════ */
+.section {
+  position: relative;
+  padding-block: var(--space-20);
+  /* Skip rendering offscreen sections for faster initial paint */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+  /* Isolate layout/paint for better performance */
+  contain: layout style paint;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: var(--space-32);
+  }
+}
+
+.section--hero {
+  padding-block: var(--space-16) var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .section--hero {
+    padding-block: var(--space-20) var(--space-16);
+  }
+}
+
+

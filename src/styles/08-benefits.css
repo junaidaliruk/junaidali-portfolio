@@ -1,0 +1,269 @@
+/* 08-benefits.css — Benefits Section matching Studio Nika */
+
+/* ═══════════════════════════════════════════════════════════ */
+/* BENEFITS SECTION                                          */
+/* ═══════════════════════════════════════════════════════════ */
+.benefits-section {
+  position: relative;
+  padding: var(--space-24) 0 120px;
+  overflow: hidden;
+  background: #fff;
+  contain: layout style;
+}
+
+/* Guide lines extend 20% below */
+.benefits-section .guide-left,
+.benefits-section .guide-right {
+  bottom: -20%;
+}
+
+
+
+/* ═══════════════════════════════════════════════════════════ */
+/* SECTION LABEL — "BENEFITS" small caps                      */
+/* ═══════════════════════════════════════════════════════════ */
+.benefits-label {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* SECTION HEADING — Large centered text                      */
+/* ═══════════════════════════════════════════════════════════ */
+.benefits-heading {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  text-align: center;
+  max-width: 900px;
+  margin-inline: auto;
+  margin-bottom: var(--space-12);
+  padding-inline: var(--space-6);
+}
+
+@media (min-width: 810px) {
+  .benefits-heading {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* DECORATIVE LINE — Horizontal separator                    */
+/* ═══════════════════════════════════════════════════════════ */
+.benefits-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  margin-bottom: var(--space-12);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* BENEFITS GRID — 2 columns on desktop                       */
+/* ═══════════════════════════════════════════════════════════ */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  max-width: 1000px;
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* BENEFIT CARD — Individual card styling                     */
+/* ═══════════════════════════════════════════════════════════ */
+.benefit-card {
+  position: relative;
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  overflow: hidden;
+  padding: 8px 8px 24px;
+  transition: box-shadow var(--duration-normal) ease, transform var(--duration-normal) ease;
+}
+
+.benefit-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Third card spans full width */
+.benefit-card:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD IMAGE — Contains pattern + product screenshot         */
+/* ═══════════════════════════════════════════════════════════ */
+.benefit-card__image {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* Third card image */
+.benefit-card:nth-child(3) .benefit-card__image {
+  height: 220px;
+  max-width: 440px;
+  margin-inline: auto;
+}
+
+/* Third card has diagonal pattern too */
+.benefit-card:nth-child(3) {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-10 40L40-10M0 40L40 0M10 40L40 10M20 40L40 20M30 40L40 30' stroke='%23000' stroke-opacity='0.04' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 40px 40px;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* DIAGONAL PATTERN — Same as Studio Nika                     */
+/* ═══════════════════════════════════════════════════════════ */
+.benefit-card__pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-10 40L40-10M0 40L40 0M10 40L40 10M20 40L40 20M30 40L40 30' stroke='%23000' stroke-opacity='0.04' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* PRODUCT SCREENSHOT — Overlaying the pattern                */
+/* ═══════════════════════════════════════════════════════════ */
+.benefit-card__image img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s var(--ease-out);
+}
+
+/* Animate image on hover, not the card */
+.benefit-card:hover .benefit-card__image img {
+  transform: scale(1.05);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD CONTENT — Title + description below image             */
+/* ═══════════════════════════════════════════════════════════ */
+.benefit-card__content {
+  padding: var(--space-4) var(--space-2) 0;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD TITLE — Bold heading                                  */
+/* ═══════════════════════════════════════════════════════════ */
+.benefit-card__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 100%;
+  color: var(--color-text);
+  margin: 0 0 var(--space-2) 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD DESCRIPTION — Gray text                               */
+/* ═══════════════════════════════════════════════════════════ */
+.benefit-card__description {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CTA BUTTON                                                */
+/* ═══════════════════════════════════════════════════════════ */
+.benefits-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-12);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* BOTTOM LINE — Decorative separator                         */
+/* ═══════════════════════════════════════════════════════════ */
+.benefits-line-bottom {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  margin-top: var(--space-20);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* REDUCED MOTION — Accessibility                             */
+/* ═══════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .benefit-card,
+  .benefit-card__image img {
+    transition: none;
+  }
+  .benefit-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* RESPONSIVE — Mobile adjustments                            */
+/* ═══════════════════════════════════════════════════════════ */
+@media (max-width: 1023px) {
+  .benefits-heading {
+    font-size: clamp(32px, 6vw, 48px);
+  }
+}
+
+@media (max-width: 767px) {
+  .benefits-section {
+    padding: var(--space-12) 0;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-inline: var(--space-4);
+  }
+
+  .benefit-card:nth-child(3) {
+    max-width: 100%;
+  }
+
+  .benefit-card__image {
+    height: 250px;
+  }
+
+  .benefit-card__content {
+    padding: var(--space-4);
+  }
+
+  .benefit-card__title {
+    font-size: 18px;
+  }
+
+  .benefit-card__description {
+    font-size: 14px;
+  }
+}

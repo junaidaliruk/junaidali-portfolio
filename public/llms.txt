@@ -1,0 +1,35 @@
+# Junaid Ali — Fullstack Developer & Designer
+
+## About
+
+I'm a fullstack developer specializing in modern web experiences. I build fast, beautiful, accessible websites for startups and ambitious brands.
+
+## Services
+
+- Web Design & Development
+- Fullstack Application Development
+- UI/UX Implementation
+- Performance Optimization
+- Accessibility Auditing
+
+## Technologies
+
+- React 19
+- TypeScript
+- Bun Runtime
+- Modern CSS (Scroll-driven animations, View Transitions)
+- Node.js
+
+## Contact
+
+- Website: [developer-junaid.vercel.app](https://developer-junaid.vercel.app)
+- Book a Call: [Schedule Meeting](https://developer-junaid.vercel.app#book-a-call)
+
+## Links
+
+- [Portfolio](https://developer-junaid.vercel.app)
+- [Projects](https://developer-junaid.vercel.app#work)
+- [Services](https://developer-junaid.vercel.app#services)
+- [Process](https://developer-junaid.vercel.app#process)
+- [FAQ](https://developer-junaid.vercel.app#faq)
+

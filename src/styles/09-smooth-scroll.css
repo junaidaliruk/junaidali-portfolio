@@ -1,0 +1,19 @@
+/* 09-smooth-scroll.css — Custom Smooth Scroll Styles */
+
+/* ═══════════════════════════════════════════════════════════ */
+/* SMOOTH SCROLL — Minimal styles                             */
+/* ═══════════════════════════════════════════════════════════ */
+
+/* Ensure smooth scroll doesn't conflict with pointer events */
+html {
+  scroll-behavior: auto !important;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* REDUCED MOTION — Respect user preference                    */
+/* ═══════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: smooth !important;
+  }
+}

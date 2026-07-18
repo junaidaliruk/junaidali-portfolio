@@ -1,0 +1,15 @@
+@import "./styles/00-reset.css";
+@import "./styles/01-tokens.css";
+@import "./styles/02-typography.css";
+@import "./styles/03-layout.css";
+@import "./styles/04-components.css";
+@import "./styles/05-animations.css";
+@import "./styles/06-utilities.css";
+@import "./styles/07-ticker.css";
+@import "./styles/08-benefits.css";
+@import "./styles/09-smooth-scroll.css";
+@import "./styles/10-works.css";
+@import "./styles/11-process.css";
+@import "./styles/12-testimonials.css";
+@import "./styles/13-footer.css";
+@import "./styles/20-faq.css";

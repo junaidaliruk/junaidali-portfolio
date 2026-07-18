@@ -1,0 +1,132 @@
+/* 02-typography.css — @font-face, Type Scale, Text Wrap */
+
+/* ═══════════════════════════════════════════════════════ */
+/* BASE TYPOGRAPHY                                      */
+/* ═══════════════════════════════════════════════════════ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+}
+
+p {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* HEADING SCALE                                        */
+/* ═══════════════════════════════════════════════════════ */
+.heading-hero {
+  font-size: var(--text-hero);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-none);
+  letter-spacing: var(--tracking-tighter);
+}
+
+.heading-1 {
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.heading-2 {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.heading-3 {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+}
+
+.heading-4 {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-snug);
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* BODY TEXT                                            */
+/* ═══════════════════════════════════════════════════════ */
+.body-lg {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+.body-base {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+.body-sm {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.body-xs {
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* LABEL / TAG TEXT                                     */
+/* ═══════════════════════════════════════════════════════ */
+.label {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.label--accent {
+  color: var(--color-green);
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* TEXT STYLING                                         */
+/* ═══════════════════════════════════════════════════════ */
+.text-bold {
+  font-weight: var(--weight-bold);
+}
+
+.text-medium {
+  font-weight: var(--weight-medium);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-accent {
+  color: var(--color-green);
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* TEXT BALANCE — Modern CSS                             */
+/* ═══════════════════════════════════════════════════════ */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.text-nowrap {
+  text-wrap: nowrap;
+}

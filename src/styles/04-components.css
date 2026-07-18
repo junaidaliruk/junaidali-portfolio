@@ -1,0 +1,371 @@
+/* 04-components.css — Button, Card, Nav, Divider, Badge */
+
+/* ═══════════════════════════════════════════════════════ */
+/* BUTTON — Studionika-style vertical slide + avatars    */
+/* ═══════════════════════════════════════════════════════ */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  height: 62px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-decoration: none;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Focus — keyboard only */
+.btn:focus {
+  outline: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid #0066ff;
+  outline-offset: 4px;
+  border-radius: var(--radius-full);
+}
+
+/* Active press */
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Black pill background */
+.btn__bg {
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  border-radius: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 0;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover .btn__bg {
+  background-color: #111;
+}
+
+/* Content wrapper */
+.btn__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 50px;
+  overflow: hidden;
+}
+
+/* Text mask — contains both text states */
+.btn__text-mask {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50px;
+  overflow: hidden;
+}
+
+/* Default text — "BOOK A CALL" */
+.btn__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  white-space: pre;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  line-height: 1.2;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+}
+
+.btn:hover .btn__label,
+.btn:focus-visible .btn__label {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+/* Hover state — avatars + LETS TALK */
+.btn__hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(30px);
+  transition: opacity 0.3s ease,
+              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover .btn__hover,
+.btn:focus-visible .btn__hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Avatar group */
+.btn__avatar-group {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Avatar circle */
+.btn__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 0;
+  filter: blur(5px);
+  transform: rotate(-180deg);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: -15px;
+}
+
+.btn:hover .btn__avatar,
+.btn:focus-visible .btn__avatar {
+  opacity: 1;
+  filter: blur(0);
+  transform: rotate(0deg);
+}
+
+.btn__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Second avatar (YOU) */
+.btn__avatar--you {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(180deg);
+}
+
+.btn:hover .btn__avatar--you,
+.btn:focus-visible .btn__avatar--you {
+  transform: rotate(0deg);
+}
+
+.btn__avatar-you-text {
+  color: #000;
+  font-size: 12px;
+  font-weight: var(--weight-extrabold);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Plus sign */
+.btn__plus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 18px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover .btn__plus,
+.btn:focus-visible .btn__plus {
+  opacity: 0;
+}
+
+/* LETS TALK text */
+.btn__talk {
+  white-space: pre;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  line-height: 1.2;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .btn__label,
+  .btn__hover,
+  .btn__avatar {
+    transition: none;
+  }
+}
+
+/* ── Touch devices ── */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* PAGE BORDERS & GUIDES — Apple-like premium frame       */
+/* ═══════════════════════════════════════════════════════ */
+body {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  min-height: 100vh;
+}
+
+.guide-left,
+.guide-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.06);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.guide-left {
+  left: 48px;
+}
+
+.guide-right {
+  right: 48px;
+}
+
+/* Hide guide lines on mobile */
+@media (max-width: 767px) {
+  .guide-left,
+  .guide-right {
+    display: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* HERO SECTION — Bordered Container                     */
+/* ═══════════════════════════════════════════════════════ */
+.section--hero {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 70px 0 90px;
+  min-height: 420px;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero-container {
+    padding-inline: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-container {
+    padding-inline: var(--space-12);
+  }
+}
+
+.hero-heading {
+  font-size: var(--text-hero);
+  font-weight: var(--weight-semibold);
+  line-height: 1.05;
+  letter-spacing: var(--tracking-tighter);
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* HERO ROTATING TEXT                                    */
+/* ═══════════════════════════════════════════════════════ */
+.hero-rotating-wrapper {
+  display: block;
+  overflow: hidden;
+  min-height: 1.2em;
+  margin-top: 4px;
+}
+
+.hero-rotating-text {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: var(--weight-medium);
+  font-style: normal;
+  line-height: 1.05;
+  letter-spacing: var(--tracking-tighter);
+  color: var(--color-text);
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform var(--duration-normal) var(--ease-out), opacity var(--duration-normal) var(--ease-out);
+  will-change: transform, opacity;
+}
+
+.hero-rotating-text--exit {
+  transform: translateY(-15px);
+  opacity: 0;
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* HERO DESCRIPTION                                      */
+/* ═══════════════════════════════════════════════════════ */
+.hero-description {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  line-height: 1.2;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: 500px;
+  margin-inline: auto;
+  margin-top: 24px;
+}
+
+.hero-desc-gray {
+  color: var(--color-text-muted);
+}
+
+.hero-desc-bold {
+  color: var(--color-text);
+  font-weight: var(--weight-regular);
+}
+
+.hero-cta {
+  margin-top: 32px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rotating-text {
+    transition: none;
+  }
+}

@@ -1,0 +1,256 @@
+/* 13-footer.css — Footer Section matching Studio Nika EXACTLY */
+
+/* ═══════════════════════════════════════════════════════════ */
+/* FOOTER SECTION                                             */
+/* ═══════════════════════════════════════════════════════════ */
+.footer-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CTA CONTAINER                                              */
+/* ═══════════════════════════════════════════════════════════ */
+.footer-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  padding: 100px 0 32px;
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* HEADING — "Let's ship your site..."                        */
+/* ═══════════════════════════════════════════════════════════ */
+.footer-heading {
+  font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 41.8px;
+  letter-spacing: -1.52px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* AVAILABILITY INFO                                           */
+/* ═══════════════════════════════════════════════════════════ */
+.footer-availability {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.footer-availability__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+.footer-availability__dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.footer-availability__reply,
+.footer-availability__location {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.footer-button--secondary {
+  background: transparent !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-button--secondary:hover {
+  background: rgba(0, 0, 0, 0.03) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* BUTTONS CONTAINER                                          */
+/* ═══════════════════════════════════════════════════════════ */
+.footer-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  width: 100%;
+  align-items: center;
+  padding: 0 50px;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* INDIVIDUAL BUTTON — Pill shape, white bg                    */
+/* ═══════════════════════════════════════════════════════════ */
+.footer-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 36px;
+  background: rgb(255, 255, 255);
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  gap: 10px;
+  height: 118px;
+}
+
+.footer-button:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* BUTTON TEXT                                                 */
+/* ═══════════════════════════════════════════════════════════ */
+.footer-button__text {
+  font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 46px;
+  letter-spacing: -0.8px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* BOTTOM BAR                                                  */
+/* ═══════════════════════════════════════════════════════════ */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 48px 0 60px;
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* "Follow on socials" label                                   */
+/* ═══════════════════════════════════════════════════════════ */
+.footer-socials-label {
+  font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  letter-spacing: -0.32px;
+  color: rgba(15, 15, 15, 0.75);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* SOCIAL ICONS ROW                                            */
+/* ═══════════════════════════════════════════════════════════ */
+.footer-socials {
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* INDIVIDUAL SOCIAL ICON — Dark gradient, rounded             */
+/* ═══════════════════════════════════════════════════════════ */
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(rgb(43, 43, 43) 0%, rgb(20, 20, 20) 100%);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  padding: 0;
+}
+
+.footer-social-icon:hover {
+  opacity: 0.8;
+}
+
+.footer-social-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* COPYRIGHT                                                    */
+/* ═══════════════════════════════════════════════════════════ */
+.footer-copyright {
+  font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -0.32px;
+  color: rgba(15, 15, 15, 0.5);
+  margin: 0;
+  margin-top: 16px;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* RESPONSIVE — Mobile                                         */
+/* ═══════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .footer-cta {
+    padding: 60px 0 32px;
+    gap: 32px;
+  }
+
+  .footer-heading {
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -1.12px;
+  }
+
+  .footer-buttons {
+    padding: 0 20px;
+  }
+
+  .footer-button {
+    padding: 24px;
+    height: auto;
+  }
+
+  .footer-button__text {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.48px;
+  }
+
+  .footer-bottom {
+    padding: 40px 0 48px;
+  }
+
+  .footer-socials-label {
+    font-size: 14px;
+  }
+
+  .footer-copyright {
+    font-size: 14px;
+  }
+}

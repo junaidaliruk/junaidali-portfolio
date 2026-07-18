@@ -1,0 +1,274 @@
+/* 11-process.css — Process Section matching Studio Nika exactly */
+
+/* ═══════════════════════════════════════════════════════════ */
+/* PROCESS SECTION                                            */
+/* ═══════════════════════════════════════════════════════════ */
+.process-section {
+  position: relative;
+  padding: var(--space-24) 0 120px;
+  overflow: hidden;
+  background: var(--color-bg);
+  contain: layout style;
+}
+
+/* Guide lines extend 20% below */
+.process-section .guide-left,
+.process-section .guide-right {
+  bottom: -20%;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* SECTION LABEL — "PROCESS" small caps                       */
+/* ═══════════════════════════════════════════════════════════ */
+.process-label {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.56px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* SECTION HEADING — Large centered text                      */
+/* ═══════════════════════════════════════════════════════════ */
+.process-heading {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -1.44px;
+  color: var(--color-text-secondary);
+  text-align: center;
+  max-width: 850px;
+  margin-inline: auto;
+  margin-bottom: 0;
+  padding-inline: var(--space-6);
+}
+
+@media (min-width: 810px) {
+  .process-heading {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -1.44px;
+    line-height: 1;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* PROCESS GRID — 2x2 layout matching Studio Nika              */
+/* ═══════════════════════════════════════════════════════════ */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* PROCESS CARD — Individual step styling                      */
+/* ═══════════════════════════════════════════════════════════ */
+.process-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  border-radius: var(--radius-2xl);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD IMAGE — 200x200 image with white bg, no border         */
+/* ═══════════════════════════════════════════════════════════ */
+.process-card__image {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.process-card__image img {
+  display: block;
+  width: 218px;
+  height: 218px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.process-card:hover .process-card__image img {
+  transform: scale(1.03);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD CONTENT — Title + description below image              */
+/* ═══════════════════════════════════════════════════════════ */
+.process-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding-bottom: 16px;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD TITLE — Bold heading                                   */
+/* ═══════════════════════════════════════════════════════════ */
+.process-card__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD DESCRIPTION — Gray text                                */
+/* ═══════════════════════════════════════════════════════════ */
+.process-card__description {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #6C6C6C;
+  text-align: center;
+  margin: 0;
+  max-width: 350px;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CTA BUTTON                                                 */
+/* ═══════════════════════════════════════════════════════════ */
+.process-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-12);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* BOTTOM LINE — Decorative separator                          */
+/* ═══════════════════════════════════════════════════════════ */
+.process-line-bottom {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+  margin-top: var(--space-20);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* REDUCED MOTION — Accessibility                              */
+/* ═══════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .process-card__image img {
+    transition: none;
+  }
+
+  .process-card:hover .process-card__image img {
+    transform: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* RESPONSIVE — Tablet                                        */
+/* ═══════════════════════════════════════════════════════════ */
+@media (max-width: 1023px) {
+  .process-section {
+    padding: var(--space-16) 0 100px;
+  }
+
+  .process-heading {
+    font-size: clamp(36px, 6vw, 48px);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* RESPONSIVE — Mobile (1 column)                              */
+/* ═══════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .process-section {
+    padding: var(--space-12) 0 80px;
+  }
+
+  .process-heading {
+    font-size: 32px;
+    letter-spacing: -0.96px;
+    line-height: 1;
+    padding-inline: var(--space-4);
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-inline: var(--space-4);
+  }
+
+  .process-card__image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .process-card__image img {
+    width: 176px;
+    height: 176px;
+  }
+
+  .process-card__title {
+    font-size: 18px;
+  }
+
+  .process-card__description {
+    font-size: 15px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* RESPONSIVE — Very small screens (< 360px)                   */
+/* ═══════════════════════════════════════════════════════════ */
+@media (max-width: 360px) {
+  .process-section {
+    padding: var(--space-10) 0 60px;
+  }
+
+  .process-heading {
+    font-size: 28px;
+    letter-spacing: -0.84px;
+  }
+
+  .process-grid {
+    gap: 20px;
+    padding-inline: var(--space-3);
+  }
+
+  .process-card__image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .process-card__image img {
+    width: 156px;
+    height: 156px;
+  }
+
+  .process-card__title {
+    font-size: 16px;
+  }
+
+  .process-card__description {
+    font-size: 14px;
+  }
+}

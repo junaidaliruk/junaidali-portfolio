@@ -1,0 +1,264 @@
+/* 12-testimonials.css — Auto-scrolling Testimonials Carousel */
+
+/* ═══════════════════════════════════════════════════════════ */
+/* TESTIMONIALS SECTION                                       */
+/* ═══════════════════════════════════════════════════════════ */
+.testimonials-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 50px 60px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* GUIDE LINES — 1px wide, rgba(0,0,0,0.06)                  */
+/* ═══════════════════════════════════════════════════════════ */
+.testimonials-section .guide-left,
+.testimonials-section .guide-right {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  z-index: 1;
+  width: 1px !important;
+  background: rgba(0, 0, 0, 0.06) !important;
+  height: auto !important;
+}
+
+.testimonials-section .guide-left {
+  left: 48px !important;
+}
+
+.testimonials-section .guide-right {
+  right: 48px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* SECTION CONTENT — Header area                              */
+/* ═══════════════════════════════════════════════════════════ */
+.testimonials-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* SECTION LABEL — "TESTIMONIALS" small caps                  */
+/* ═══════════════════════════════════════════════════════════ */
+.testimonials-label {
+  font-family: "Geist Mono", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.45);
+  text-align: center;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* SECTION HEADING — Large bold text                          */
+/* ═══════════════════════════════════════════════════════════ */
+.testimonials-heading {
+  font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: -1.56px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  max-width: 800px;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* SECTION SUBTITLE — Gray text                               */
+/* ═══════════════════════════════════════════════════════════ */
+.testimonials-subtitle {
+  font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.32px;
+  color: rgba(0, 0, 0, 0.45);
+  text-align: center;
+  max-width: 500px;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* VIEWPORT — Overflow hidden container for auto-scroll       */
+/* ═══════════════════════════════════════════════════════════ */
+.testimonials-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 2;
+  cursor: grab;
+}
+
+.testimonials-viewport:active {
+  cursor: grabbing;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* TRACK — The scrolling strip (JS-driven)                    */
+/* ═══════════════════════════════════════════════════════════ */
+.testimonials-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  will-change: transform;
+  contain: layout style paint;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* TESTIMONIAL CARD — Individual review card                  */
+/* ═══════════════════════════════════════════════════════════ */
+.testimonial-card {
+  flex: 0 0 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  min-height: 240px;
+  transition: box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* CARD AUTHOR — Avatar + Name + Role                         */
+/* ═══════════════════════════════════════════════════════════ */
+.testimonial-card__author {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  align-items: center;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* AVATAR — Square with rounded corners                       */
+/* ═══════════════════════════════════════════════════════════ */
+.testimonial-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f0f0f0;
+}
+
+.testimonial-card__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* AUTHOR INFO — Name + Role                                  */
+/* ═══════════════════════════════════════════════════════════ */
+.testimonial-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testimonial-card__name {
+  font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+.testimonial-card__role {
+  font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.45);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* REVIEW TEXT — Quote content                                */
+/* ═══════════════════════════════════════════════════════════ */
+.testimonial-card__text {
+  font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.testimonial-card__text strong {
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* HORIZONTAL OVERFLOW PREVENTION                             */
+/* ═══════════════════════════════════════════════════════════ */
+html, body {
+  overflow-x: clip !important;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* REDUCED MOTION — Accessibility                             */
+/* ═══════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-card {
+    transition: none;
+  }
+  .testimonial-card:hover {
+    box-shadow: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* RESPONSIVE — Mobile                                        */
+/* ═══════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .testimonials-section {
+    padding: 60px 20px 40px;
+  }
+
+  .testimonials-content {
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .testimonials-heading {
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: -0.96px;
+    max-width: 100%;
+  }
+
+  .testimonials-subtitle {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .testimonial-card {
+    flex: 0 0 320px;
+    padding: 20px;
+    min-height: 200px;
+  }
+}
