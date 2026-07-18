@@ -56,13 +56,13 @@ export function Footer() {
             rel="noopener noreferrer"
             className="footer-button"
           >
-            <span className="footer-button__text">Contact us</span>
+            <span className="footer-button__text">Contact me</span>
           </a>
           <a
             href="mailto:junaidruk526@gmail.com"
             className="footer-button"
           >
-            <span className="footer-button__text">Send us an email</span>
+            <span className="footer-button__text">Send me an email</span>
           </a>
         </div>
       </div>

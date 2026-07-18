@@ -17,19 +17,19 @@ const STEPS = [
   {
     id: 2,
     title: "Design Sprint",
-    description: "We start designing right away and share daily progress, screen drops, and updates.",
+    description: "I start designing right away and share daily progress, screen drops, and updates.",
     image: "https://framerusercontent.com/images/WILUpmNpUD7hxln0sRMRnysBBY.png",
   },
   {
     id: 3,
     title: "Build & Polish",
-    description: "Once design is approved, we move straight into Framer and build everything end-to-end.",
+    description: "Once design is approved, I move straight into Framer and build everything end-to-end.",
     image: "https://framerusercontent.com/images/f4ixpBAKVYGup0BL3xsH7GYHcc.png",
   },
   {
     id: 4,
     title: "Launch",
-    description: "You get full access to everything. Ship it, rock it, grow it — you're not locked to us.",
+    description: "You get full access to everything. Ship it, rock it, grow it — you're not locked to me.",
     image: "https://framerusercontent.com/images/VEflRDO0jnPI4e9vXj9woFNk.png",
   },
 ];
@@ -46,7 +46,7 @@ export function Process() {
 
       {/* Section heading */}
       <h2 id="process-heading" className="process-heading">
-        How We Work
+        How I Work
       </h2>
 
       {/* Process grid — 2x2 layout */}
@@ -78,7 +78,7 @@ export function Process() {
 
       {/* CTA Button */}
       <div className="process-cta">
-        <Button href="https://wa.me/+923292876526" target="_blank">CONTACT US</Button>
+        <Button href="https://wa.me/+923292876526" target="_blank">CONTACT ME</Button>
       </div>
 
       {/* Bottom decorative line */}

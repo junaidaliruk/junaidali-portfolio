@@ -80,7 +80,7 @@ export function Works() {
       {/* Section header */}
       <p className="works-label">WORKS</p>
       <h2 id="works-heading" className="works-heading">
-        Some of Our Best Works
+        Some of My Best Works
       </h2>
       <p className="works-subtitle">
         Websites that I shipped for VCs, SaaS teams,
@@ -105,7 +105,7 @@ export function Works() {
       {/* CTA Section */}
       <div className="works-cta">
         <p className="works-cta__text">Want to see your project here?</p>
-        <Button href="https://wa.me/+923292876526" target="_blank">CONTACT US</Button>
+        <Button href="https://wa.me/+923292876526" target="_blank">CONTACT ME</Button>
       </div>
 
       {/* Bottom decorative line */}

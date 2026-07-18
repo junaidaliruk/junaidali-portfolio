@@ -52,7 +52,7 @@ export function Benefits() {
 
       {/* Section heading */}
       <h2 id="benefits-heading" className="benefits-heading">
-        What Working With Us Looks Like
+        What Working With Me Looks Like
       </h2>
 
       {/* Benefits grid */}
@@ -92,7 +92,7 @@ export function Benefits() {
 
       {/* CTA Button */}
       <div className="benefits-cta">
-        <Button href="https://wa.me/+923292876526" target="_blank">CONTACT US</Button>
+        <Button href="https://wa.me/+923292876526" target="_blank">CONTACT ME</Button>
       </div>
 
       {/* Bottom decorative line */}

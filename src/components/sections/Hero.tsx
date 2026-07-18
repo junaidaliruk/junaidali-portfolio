@@ -73,7 +73,7 @@ export function Hero() {
 
         {/* ── CTA Button ── */}
         <div className="hero-cta">
-          <Button href="https://wa.me/+923292876526" target="_blank">CONTACT US</Button>
+          <Button href="https://wa.me/+923292876526" target="_blank">CONTACT ME</Button>
         </div>
       </div>
     </section>

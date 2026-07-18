@@ -62,7 +62,7 @@ const TESTIMONIALS = [
     role: "Founder of Creativenix",
     avatar: "https://framerusercontent.com/images/ZS17v4JTBfzRG5MO530mtyF9Yug.png",
     text: "Junaid has a great eye for design, which I truly value as a designer myself. Unlike many others, he's on top of trends, quickly implements requests.",
-    highlight: "Has already designed 3 websites for us. Highly recommended!",
+    highlight: "Has already designed 3 websites for me. Highly recommended!",
   },
 ];
 
@@ -193,7 +193,7 @@ export function Testimonials() {
 
         {/* Subtitle */}
         <p className="testimonials-subtitle">
-          Real founders who trusted us with their sites.
+          Real founders who trusted me with their sites.
         </p>
       </div>
 
