@@ -24,6 +24,14 @@ const server = serve({
     "/llms.txt": new Response(Bun.file(join(PUBLIC_DIR, "llms.txt")), {
       headers: { "Content-Type": "text/plain", "Cache-Control": CACHE_LONG },
     }),
+    // CV - auto-download
+    "/cv": new Response(Bun.file(join(PUBLIC_DIR, "JunaidAliCv.pdf")), {
+      headers: {
+        "Content-Type": "application/pdf",
+        "Content-Disposition": 'attachment; filename="JunaidAliCv.pdf"',
+        "Cache-Control": CACHE_LONG,
+      },
+    }),
     "/_headers": new Response(Bun.file(join(PUBLIC_DIR, "_headers")), {
       headers: { "Content-Type": "text/plain", "Cache-Control": CACHE_LONG },
     }),
