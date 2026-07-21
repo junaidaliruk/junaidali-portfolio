@@ -45,7 +45,7 @@ export function Footer() {
         {/* Heading */}
         <h2 className="footer-heading">
           Let&apos;s ship your site.<br />
-          Do it once, do it right.
+          Do it once, Do it right.
         </h2>
 
         {/* Buttons */}
