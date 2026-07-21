@@ -3,6 +3,13 @@
   "outputDirectory": "dist",
   "headers": [
     {
+      "source": "/cv",
+      "headers": [
+        { "key": "Content-Type", "value": "application/pdf" },
+        { "key": "Content-Disposition", "value": "attachment; filename=\"JunaidAliCv.pdf\"" }
+      ]
+    },
+    {
       "source": "/llms.txt",
       "headers": [
         { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
@@ -30,6 +37,7 @@
   ],
   "rewrites": [
     { "source": "/screenshots/(.*)", "destination": "/screenshots/$1" },
+    { "source": "/cv", "destination": "/JunaidAliCv.pdf" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
