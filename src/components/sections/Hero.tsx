@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "../ui/Button";
 
 /**
@@ -26,19 +26,36 @@ const DESCRIPTION_PARTS = [
 
 export function Hero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [previousWordIndex, setPreviousWordIndex] = useState<number | null>(null);
+  const [isEntering, setIsEntering] = useState(false);
+  const currentIndexRef = useRef(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentWordIndex((prev) => (prev + 1) % ROTATING_WORDS.length);
-        setIsAnimating(false);
-      }, 400);
+      const nextIndex = (currentIndexRef.current + 1) % ROTATING_WORDS.length;
+
+      setPreviousWordIndex(currentIndexRef.current);
+      currentIndexRef.current = nextIndex;
+      setCurrentWordIndex(nextIndex);
+      setIsEntering(true);
     }, 3000);
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (!isEntering) return;
+
+    const frame = requestAnimationFrame(() => setIsEntering(false));
+    return () => cancelAnimationFrame(frame);
+  }, [isEntering, currentWordIndex]);
+
+  useEffect(() => {
+    if (previousWordIndex === null) return;
+
+    const timeout = setTimeout(() => setPreviousWordIndex(null), 700);
+    return () => clearTimeout(timeout);
+  }, [previousWordIndex]);
 
   return (
     <section className="section section--hero" aria-labelledby="hero-heading">
@@ -54,7 +71,16 @@ export function Hero() {
 
         {/* ── Rotating subtitle ── */}
         <div className="hero-rotating-wrapper" aria-live="polite" aria-atomic="true">
-          <p className={`hero-rotating-text ${isAnimating ? "hero-rotating-text--exit" : ""}`}>
+          {previousWordIndex !== null && (
+            <p className="hero-rotating-text hero-rotating-text--exit" aria-hidden="true">
+              {ROTATING_WORDS[previousWordIndex]}
+            </p>
+          )}
+          <p
+            className={`hero-rotating-text ${
+              isEntering ? "hero-rotating-text--enter" : ""
+            }`}
+          >
             {ROTATING_WORDS[currentWordIndex]}
           </p>
         </div>

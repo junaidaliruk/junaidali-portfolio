@@ -310,6 +310,7 @@ body {
 /* HERO ROTATING TEXT                                    */
 /* ═══════════════════════════════════════════════════════ */
 .hero-rotating-wrapper {
+  position: relative;
   display: block;
   overflow: hidden;
   min-height: 1.2em;
@@ -326,13 +327,23 @@ body {
   color: var(--color-text);
   transform: translateY(0);
   opacity: 1;
-  transition: transform var(--duration-normal) var(--ease-out), opacity var(--duration-normal) var(--ease-out);
+  transition: transform var(--duration-slower) var(--ease-out),
+              opacity var(--duration-slower) var(--ease-out);
   will-change: transform, opacity;
 }
 
-.hero-rotating-text--exit {
-  transform: translateY(-15px);
+.hero-rotating-text--enter {
   opacity: 0;
+  transform: translate3d(0, 0.45em, 0);
+}
+
+.hero-rotating-text--exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translate3d(0, -0.45em, 0);
 }
 
 /* ═══════════════════════════════════════════════════════ */
