@@ -18,7 +18,7 @@ export class ErrorBoundary extends Component<Props, State> {
     return { hasError: true };
   }
 
-  override render() {
+  render() {
     if (this.state.hasError) {
       return (
         <div

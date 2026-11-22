@@ -1,8 +1,6 @@
 "use client";
 
 import { useRef, useCallback, useEffect, useState } from "react";
-import { Reveal } from "../ui/Reveal";
-import { SplitText } from "../ui/SplitText";
 
 /**
  * Testimonials section — Auto-scrolling testimonial carousel.
@@ -154,26 +152,20 @@ export function Testimonials() {
 
   // Touch handlers
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    const touch = e.touches[0];
-    if (!touch) return;
-
     isDragging.current = true;
-    lastMouseX.current = touch.clientX;
+    lastMouseX.current = e.touches[0].clientX;
     dragVelocity.current = 0;
   }, []);
 
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
     if (!isDragging.current) return;
-
-    const touch = e.touches[0];
-    if (!touch) return;
-
-    const deltaX = touch.clientX - lastMouseX.current;
+    
+    const deltaX = e.touches[0].clientX - lastMouseX.current;
     const instantVelocity = deltaX;
     dragVelocity.current = dragVelocity.current * 0.7 + instantVelocity * 0.3;
-
+    
     positionRef.current += deltaX;
-    lastMouseX.current = touch.clientX;
+    lastMouseX.current = e.touches[0].clientX;
   }, []);
 
   const handleTouchEnd = useCallback(() => {
@@ -192,23 +184,17 @@ export function Testimonials() {
       {/* Main content */}
       <div className="testimonials-content">
         {/* Section label */}
-        <Reveal distance={14}>
-          <p className="testimonials-label">TESTIMONIALS</p>
-        </Reveal>
+        <p className="testimonials-label">TESTIMONIALS</p>
 
         {/* Section heading */}
-        <SplitText
-          id="testimonials-heading"
-          className="testimonials-heading"
-          text="You Want Proof? These Reviews Say Everything."
-        />
+        <h2 id="testimonials-heading" className="testimonials-heading">
+          You Want Proof? These Reviews Say Everything.
+        </h2>
 
         {/* Subtitle */}
-        <Reveal delay={120}>
-          <p className="testimonials-subtitle">
-            Real founders who trusted me with their sites.
-          </p>
-        </Reveal>
+        <p className="testimonials-subtitle">
+          Real founders who trusted me with their sites.
+        </p>
       </div>
 
       {/* Auto-scrolling testimonials viewport */}

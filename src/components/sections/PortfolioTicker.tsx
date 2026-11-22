@@ -56,7 +56,6 @@ export function PortfolioTicker() {
   const positionRef = useRef(0);
   const velocityRef = useRef(1);
   const isDragging = useRef(false);
-  const isHovered = useRef(false);
   const lastMouseX = useRef(0);
   const dragVelocity = useRef(0);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -80,7 +79,7 @@ export function PortfolioTicker() {
         if (isDragging.current) {
           positionRef.current += dragVelocity.current;
           dragVelocity.current *= 0.9;
-        } else if (!isHovered.current) {
+        } else {
           dragVelocity.current *= 0.95;
           positionRef.current -= velocityRef.current;
         }
@@ -137,26 +136,20 @@ export function PortfolioTicker() {
 
   // Touch handlers
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    const touch = e.touches[0];
-    if (!touch) return;
-
     isDragging.current = true;
-    lastMouseX.current = touch.clientX;
+    lastMouseX.current = e.touches[0].clientX;
     dragVelocity.current = 0;
   }, []);
 
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
     if (!isDragging.current) return;
-
-    const touch = e.touches[0];
-    if (!touch) return;
-
-    const deltaX = touch.clientX - lastMouseX.current;
+    
+    const deltaX = e.touches[0].clientX - lastMouseX.current;
     const instantVelocity = deltaX;
     dragVelocity.current = dragVelocity.current * 0.7 + instantVelocity * 0.3;
-
+    
     positionRef.current += deltaX;
-    lastMouseX.current = touch.clientX;
+    lastMouseX.current = e.touches[0].clientX;
   }, []);
 
   const handleTouchEnd = useCallback(() => {
@@ -168,21 +161,15 @@ export function PortfolioTicker() {
   const items = [...PORTFOLIO_ITEMS, ...PORTFOLIO_ITEMS];
 
   return (
-    <section className="ticker-section" id="portfolio" aria-label="Portfolio showcase">
+    <section className="ticker-section" aria-label="Portfolio showcase">
       <div className="ticker-bg" aria-hidden="true" />
 
       <div
         className="ticker-viewport"
-        onMouseEnter={() => {
-          isHovered.current = true;
-        }}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
-        onMouseLeave={() => {
-          isHovered.current = false;
-          handleMouseUp();
-        }}
+        onMouseLeave={handleMouseUp}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}

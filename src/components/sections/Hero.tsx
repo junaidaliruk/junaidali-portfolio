@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "../ui/Button";
-import { SplitText } from "../ui/SplitText";
 
 /**
  * Hero section — matches Studio Nika's layout exactly.
@@ -27,17 +26,18 @@ const DESCRIPTION_PARTS = [
 
 export function Hero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [previousWordIndex, setPreviousWordIndex] = useState<number | null>(null);
   const [isEntering, setIsEntering] = useState(false);
+  const currentIndexRef = useRef(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentWordIndex((prev) => (prev + 1) % ROTATING_WORDS.length);
-        setIsEntering(true);
-        setIsAnimating(false);
-      }, 400);
+      const nextIndex = (currentIndexRef.current + 1) % ROTATING_WORDS.length;
+
+      setPreviousWordIndex(currentIndexRef.current);
+      currentIndexRef.current = nextIndex;
+      setCurrentWordIndex(nextIndex);
+      setIsEntering(true);
     }, 3000);
 
     return () => clearInterval(interval);
@@ -50,33 +50,36 @@ export function Hero() {
     return () => cancelAnimationFrame(frame);
   }, [isEntering, currentWordIndex]);
 
+  useEffect(() => {
+    if (previousWordIndex === null) return;
+
+    const timeout = setTimeout(() => setPreviousWordIndex(null), 700);
+    return () => clearTimeout(timeout);
+  }, [previousWordIndex]);
+
   return (
-    <section
-      className="section section--hero"
-      aria-labelledby="hero-heading"
-      data-ambient
-    >
+    <section className="section section--hero" aria-labelledby="hero-heading">
       {/* Decorative guide lines */}
       <div className="guide-left" aria-hidden="true" />
       <div className="guide-right" aria-hidden="true" />
 
       <div className="hero-container">
         {/* ── Main heading ── */}
-        <SplitText
-          as="h1"
-          id="hero-heading"
-          className="hero-heading"
-          text="I Design & Develop Websites for"
-          stagger={60}
-        />
+        <h1 id="hero-heading" className="hero-heading text-balance">
+          I Design & Develop Websites for
+        </h1>
 
         {/* ── Rotating subtitle ── */}
         <div className="hero-rotating-wrapper" aria-live="polite" aria-atomic="true">
+          {previousWordIndex !== null && (
+            <p className="hero-rotating-text hero-rotating-text--exit" aria-hidden="true">
+              {ROTATING_WORDS[previousWordIndex]}
+            </p>
+          )}
           <p
-            key={currentWordIndex}
             className={`hero-rotating-text ${
-              isAnimating ? "hero-rotating-text--exit" : ""
-            } ${isEntering ? "hero-rotating-text--enter" : ""}`}
+              isEntering ? "hero-rotating-text--enter" : ""
+            }`}
           >
             {ROTATING_WORDS[currentWordIndex]}
           </p>
@@ -99,14 +102,6 @@ export function Hero() {
           <Button href="https://wa.me/+923292876526" target="_blank">CONTACT ME</Button>
         </div>
       </div>
-
-      {/* ── Scroll cue ── */}
-      <a className="scroll-cue" href="#portfolio" aria-label="Scroll to portfolio">
-        <span className="scroll-cue__label">Scroll</span>
-        <span className="scroll-cue__track" aria-hidden="true">
-          <span className="scroll-cue__dot" />
-        </span>
-      </a>
     </section>
   );
 }

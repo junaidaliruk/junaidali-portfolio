@@ -1,6 +1,4 @@
 import { Button } from "../ui/Button";
-import { Reveal } from "../ui/Reveal";
-import { SplitText } from "../ui/SplitText";
 
 /**
  * Benefits section — matches Studio Nika's layout exactly.
@@ -50,51 +48,45 @@ export function Benefits() {
       <div className="guide-right" aria-hidden="true" />
 
       {/* Section label */}
-      <Reveal distance={14}>
-        <p className="benefits-label">BENEFITS</p>
-      </Reveal>
+      <p className="benefits-label">BENEFITS</p>
 
       {/* Section heading */}
-      <SplitText
-        id="benefits-heading"
-        className="benefits-heading"
-        text="What Working With Me Looks Like"
-      />
+      <h2 id="benefits-heading" className="benefits-heading">
+        What Working With Me Looks Like
+      </h2>
 
       {/* Benefits grid */}
       <div className="benefits-grid">
-        {BENEFITS.map((benefit, index) => (
-          <Reveal key={benefit.id} delay={index * 120} distance={34}>
-            <div className="benefit-card" data-spotlight>
-              {/* Card image area with diagonal pattern */}
-              <div className="benefit-card__image">
-                {/* Diagonal stripe pattern */}
-                <div className="benefit-card__pattern" aria-hidden="true" />
+        {BENEFITS.map((benefit) => (
+          <div key={benefit.id} className="benefit-card">
+            {/* Card image area with diagonal pattern */}
+            <div className="benefit-card__image">
+              {/* Diagonal stripe pattern */}
+              <div className="benefit-card__pattern" aria-hidden="true" />
 
-                {/* Product screenshot */}
-                <img
-                  src={`${benefit.image}?width=800`}
-                  srcSet={`
-                    ${benefit.image}?scale-down-to=512&width=${benefit.imageWidth} 512w,
-                    ${benefit.image}?scale-down-to=1024&width=${benefit.imageWidth} 1024w,
-                    ${benefit.image}?width=${benefit.imageWidth} ${benefit.imageWidth}w
-                  `}
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  alt={`${benefit.title} illustration`}
-                  width={benefit.imageWidth}
-                  height={benefit.imageHeight}
-                  decoding="async"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Card content */}
-              <div className="benefit-card__content">
-                <h3 className="benefit-card__title">{benefit.title}</h3>
-                <p className="benefit-card__description">{benefit.description}</p>
-              </div>
+              {/* Product screenshot */}
+              <img
+                src={`${benefit.image}?width=800`}
+                srcSet={`
+                  ${benefit.image}?scale-down-to=512&width=${benefit.imageWidth} 512w,
+                  ${benefit.image}?scale-down-to=1024&width=${benefit.imageWidth} 1024w,
+                  ${benefit.image}?width=${benefit.imageWidth} ${benefit.imageWidth}w
+                `}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                alt={`${benefit.title} illustration`}
+                width={benefit.imageWidth}
+                height={benefit.imageHeight}
+                decoding="async"
+                loading="lazy"
+              />
             </div>
-          </Reveal>
+
+            {/* Card content */}
+            <div className="benefit-card__content">
+              <h3 className="benefit-card__title">{benefit.title}</h3>
+              <p className="benefit-card__description">{benefit.description}</p>
+            </div>
+          </div>
         ))}
       </div>
 

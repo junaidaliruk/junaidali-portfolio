@@ -42,7 +42,7 @@
 
 /* Active press */
 .btn:active {
-  transform: translate3d(var(--btn-x, 0px), var(--btn-y, 0px), 0) scale(0.98);
+  transform: scale(0.98);
 }
 
 /* Black pill background */
@@ -310,11 +310,11 @@ body {
 /* HERO ROTATING TEXT                                    */
 /* ═══════════════════════════════════════════════════════ */
 .hero-rotating-wrapper {
+  position: relative;
   display: block;
   overflow: hidden;
   min-height: 1.2em;
   margin-top: 4px;
-  perspective: 800px;
 }
 
 .hero-rotating-text {
@@ -328,21 +328,22 @@ body {
   transform: translateY(0);
   opacity: 1;
   transition: transform var(--duration-slower) var(--ease-out),
-              opacity var(--duration-normal) var(--ease-out),
-              filter var(--duration-slow) var(--ease-out);
+              opacity var(--duration-slower) var(--ease-out);
   will-change: transform, opacity;
 }
 
 .hero-rotating-text--enter {
   opacity: 0;
-  transform: translate3d(0, 0.5em, 0) rotateX(-24deg);
-  filter: blur(6px);
+  transform: translate3d(0, 0.45em, 0);
 }
 
 .hero-rotating-text--exit {
-  transform: translate3d(0, -0.3em, 0) rotateX(18deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   opacity: 0;
-  filter: blur(5px);
+  transform: translate3d(0, -0.45em, 0);
 }
 
 /* ═══════════════════════════════════════════════════════ */

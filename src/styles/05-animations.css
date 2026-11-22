@@ -42,7 +42,7 @@
 @supports ((animation-timeline: view()) and (animation-range: entry)) {
   @media (prefers-reduced-motion: no-preference) {
     .scroll-reveal {
-      animation: fade-in-up auto linear both;
+      animation: fade-in-up auto var(--ease-out) both;
       animation-timeline: view();
       animation-range: entry 0% entry 100%;
     }

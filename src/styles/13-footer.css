@@ -117,18 +117,13 @@
   border-radius: 999px;
   text-decoration: none;
   cursor: pointer;
-  transition: background 0.25s ease, transform 0.5s var(--ease-out);
+  transition: background 0.2s ease;
   gap: 10px;
   height: 118px;
 }
 
 .footer-button:hover {
   background: rgba(0, 0, 0, 0.03);
-  transform: translateY(-3px);
-}
-
-.footer-button:active {
-  transform: translateY(-1px);
 }
 
 /* ═══════════════════════════════════════════════════════════ */
@@ -190,21 +185,12 @@
   background: linear-gradient(rgb(43, 43, 43) 0%, rgb(20, 20, 20) 100%);
   border-radius: 12px;
   text-decoration: none;
-  transition:
-    opacity 0.25s ease,
-    transform 0.5s var(--ease-spring),
-    box-shadow 0.5s var(--ease-out);
+  transition: opacity 0.2s ease;
   padding: 0;
 }
 
 .footer-social-icon:hover {
-  opacity: 1;
-  transform: translateY(-4px) scale(1.06);
-  box-shadow: 0 12px 26px rgba(0, 4, 20, 0.22);
-}
-
-.footer-social-icon:active {
-  transform: translateY(-1px) scale(1.02);
+  opacity: 0.8;
 }
 
 .footer-social-icon svg {

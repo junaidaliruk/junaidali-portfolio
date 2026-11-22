@@ -1,7 +1,3 @@
-import { useLayoutEffect, useRef, useState, type CSSProperties } from "react";
-import { Reveal } from "../ui/Reveal";
-import { SplitText } from "../ui/SplitText";
-
 /**
  * FAQ section — Common questions and objections.
  *
@@ -43,76 +39,24 @@ const QUESTIONS = [
 ];
 
 export function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const [panelHeights, setPanelHeights] = useState<number[]>([]);
-  const panelRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useLayoutEffect(() => {
-    const measure = () => {
-      setPanelHeights(panelRefs.current.map((panel) => panel?.scrollHeight ?? 0));
-    };
-
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, []);
-
   return (
     <section id="faq" className="faq-section" aria-labelledby="faq-heading">
       {/* Decorative guide lines */}
       <div className="guide-left" aria-hidden="true" />
       <div className="guide-right" aria-hidden="true" />
 
-      <Reveal distance={14}>
-        <p className="faq-label">FAQ</p>
-      </Reveal>
-      <SplitText
-        id="faq-heading"
-        className="faq-heading"
-        text="Frequently asked questions"
-      />
+      <p className="faq-label">FAQ</p>
+      <h2 id="faq-heading" className="faq-heading">
+        Frequently asked questions
+      </h2>
 
       <div className="faq-grid">
-        {QUESTIONS.map((item, index) => {
-          const isOpen = openIndex === index;
-
-          return (
-            <Reveal key={index} delay={index * 70} distance={26}>
-              <div className="faq-item" data-open={isOpen} data-spotlight>
-                <h3 className="faq-item__heading">
-                  <button
-                    type="button"
-                    className="faq-item__question"
-                    id={`faq-trigger-${index}`}
-                    aria-expanded={isOpen}
-                    aria-controls={`faq-panel-${index}`}
-                    onClick={() => setOpenIndex(isOpen ? null : index)}
-                  >
-                    <span>{item.question}</span>
-                    <span className="faq-item__icon" aria-hidden="true" />
-                  </button>
-                </h3>
-
-                <div
-                  className="faq-item__panel"
-                  id={`faq-panel-${index}`}
-                  role="region"
-                  aria-labelledby={`faq-trigger-${index}`}
-                  ref={(panel) => {
-                    panelRefs.current[index] = panel;
-                  }}
-                  style={
-                    {
-                      "--faq-panel-height": `${panelHeights[index] ?? 320}px`,
-                    } as CSSProperties
-                  }
-                >
-                  <p className="faq-item__answer">{item.answer}</p>
-                </div>
-              </div>
-            </Reveal>
-          );
-        })}
+        {QUESTIONS.map((item, index) => (
+          <div key={index} className="faq-item">
+            <h3 className="faq-item__question">{item.question}</h3>
+            <p className="faq-item__answer">{item.answer}</p>
+          </div>
+        ))}
       </div>
 
       {/* Bottom decorative line */}
