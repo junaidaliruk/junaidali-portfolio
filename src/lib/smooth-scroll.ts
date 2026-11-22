@@ -149,7 +149,7 @@ export class SmoothScroll {
   /**
    * Register scroll callback
    */
-  onScroll(callback: (scrollY: number) => void): () => void {
+  subscribe(callback: (scrollY: number) => void): () => void {
     this.callbacks.push(callback);
     return () => {
       this.callbacks = this.callbacks.filter(cb => cb !== callback);

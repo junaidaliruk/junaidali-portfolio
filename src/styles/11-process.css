@@ -80,6 +80,11 @@
   gap: 20px;
   text-align: center;
   border-radius: var(--radius-2xl);
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.process-card:hover {
+  transform: translateY(-4px);
 }
 
 /* ═══════════════════════════════════════════════════════════ */
@@ -96,6 +101,11 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: box-shadow var(--duration-slow) var(--ease-out);
+}
+
+.process-card:hover .process-card__image {
+  box-shadow: 0 18px 44px rgba(0, 4, 20, 0.1);
 }
 
 .process-card__image img {

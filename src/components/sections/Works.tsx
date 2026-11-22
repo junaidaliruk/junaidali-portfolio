@@ -1,6 +1,6 @@
 /**
  * Works section — Portfolio showcase
- * 
+ *
  * Matches Studio Nika's masonry-style grid layout.
  * Efficient rendering with lazy loading.
  */
@@ -8,56 +8,69 @@
 import { WORKS } from "../../data/works";
 import type { Work } from "../../types/project";
 import { Button } from "../ui/Button";
+import { Reveal } from "../ui/Reveal";
+import { SplitText } from "../ui/SplitText";
 
 /**
  * Single work card component
  */
-function WorkCard({ work, index }: { work: Work; index: number }) {
+function WorkCard({
+  work,
+  index,
+  delay,
+}: {
+  work: Work;
+  index: number;
+  delay: number;
+}) {
   const isLocalImage = work.image.startsWith('./');
-  
-  return (
-    <a
-      href={work.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="work-card"
-    >
-      {/* Image container */}
-      <div className="work-card__image">
-        {/* Website screenshot */}
-        <img
-          src={isLocalImage ? work.image : `${work.image}?width=800`}
-          srcSet={isLocalImage ? undefined : `
-            ${work.image}?scale-down-to=512&width=${work.imageWidth} 512w,
-            ${work.image}?scale-down-to=1024&width=${work.imageWidth} 1024w,
-            ${work.image}?width=${work.imageWidth} ${work.imageWidth}w
-          `}
-          sizes={isLocalImage ? undefined : "(min-width: 1024px) 50vw, 100vw"}
-          alt={`${work.name} website screenshot`}
-          width={work.imageWidth}
-          height={work.imageHeight}
-          decoding="async"
-          loading={index < 4 ? "eager" : "lazy"}
-        />
-      </div>
 
-      {/* Card content */}
-      <div className="work-card__content">
-        <h3 className="work-card__title">
-          {work.name}
-          <span className="work-card__arrow" aria-hidden="true">→</span>
-        </h3>
-        <p className="work-card__services">
-          {work.services.join(", ")}
-        </p>
-        {/* Meta info */}
-        <div className="work-card__meta">
-          {work.year && <span>{work.year}</span>}
-          {work.year && work.tech && <span className="work-card__meta-dot" />}
-          {work.tech && <span>{work.tech}</span>}
+  return (
+    <Reveal delay={delay} distance={32}>
+      <a
+        href={work.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="work-card"
+        data-tilt
+      >
+        {/* Image container */}
+        <div className="work-card__image">
+          {/* Website screenshot */}
+          <img
+            src={isLocalImage ? work.image : `${work.image}?width=800`}
+            srcSet={isLocalImage ? undefined : `
+              ${work.image}?scale-down-to=512&width=${work.imageWidth} 512w,
+              ${work.image}?scale-down-to=1024&width=${work.imageWidth} 1024w,
+              ${work.image}?width=${work.imageWidth} ${work.imageWidth}w
+            `}
+            sizes={isLocalImage ? undefined : "(min-width: 1024px) 50vw, 100vw"}
+            alt={`${work.name} website screenshot`}
+            width={work.imageWidth}
+            height={work.imageHeight}
+            decoding="async"
+            loading={index < 4 ? "eager" : "lazy"}
+          />
         </div>
-      </div>
-    </a>
+
+        {/* Card content */}
+        <div className="work-card__content">
+          <h3 className="work-card__title">
+            {work.name}
+            <span className="work-card__arrow" aria-hidden="true">→</span>
+          </h3>
+          <p className="work-card__services">
+            {work.services.join(", ")}
+          </p>
+          {/* Meta info */}
+          <div className="work-card__meta">
+            {work.year && <span>{work.year}</span>}
+            {work.year && work.tech && <span className="work-card__meta-dot" />}
+            {work.tech && <span>{work.tech}</span>}
+          </div>
+        </div>
+      </a>
+    </Reveal>
   );
 }
 
@@ -78,14 +91,20 @@ export function Works() {
       <div className="guide-right" aria-hidden="true" />
 
       {/* Section header */}
-      <p className="works-label">WORKS</p>
-      <h2 id="works-heading" className="works-heading">
-        Some of My Best Works
-      </h2>
-      <p className="works-subtitle">
-        Websites that I shipped for VCs, SaaS teams,
-        cybersecurity products, and ambitious startups.
-      </p>
+      <Reveal distance={14}>
+        <p className="works-label">WORKS</p>
+      </Reveal>
+      <SplitText
+        id="works-heading"
+        className="works-heading"
+        text="Some of My Best Works"
+      />
+      <Reveal delay={120}>
+        <p className="works-subtitle">
+          Websites that I shipped for VCs, SaaS teams,
+          cybersecurity products, and ambitious startups.
+        </p>
+      </Reveal>
 
       {/* Works grid */}
       <div className="works-grid">
@@ -96,6 +115,7 @@ export function Works() {
                 key={work.id}
                 work={work}
                 index={rowIndex * 2 + cardIndex}
+                delay={(rowIndex * 2 + cardIndex) * 90}
               />
             ))}
           </div>

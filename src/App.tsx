@@ -7,11 +7,16 @@ import { Testimonials } from "./components/sections/Testimonials";
 import { FAQ } from "./components/sections/FAQ";
 import { Footer } from "./components/sections/Footer";
 import { BottomBlur } from "./components/layout/BottomBlur";
+import { ScrollProgress } from "./components/ui/ScrollProgress";
+import { usePointerFx } from "./hooks/usePointerFx";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
 
 export function App() {
   // Initialize smooth scroll
   useSmoothScroll();
+
+  // Cursor-tracked light, tilt and spotlight effects
+  usePointerFx();
 
   return (
     <>
@@ -19,6 +24,9 @@ export function App() {
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
+
+      {/* Scroll progress hairline */}
+      <ScrollProgress />
 
       {/* Main content */}
       <main id="main-content">

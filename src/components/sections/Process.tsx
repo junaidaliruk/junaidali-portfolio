@@ -1,4 +1,6 @@
 import { Button } from "../ui/Button";
+import { Reveal } from "../ui/Reveal";
+import { SplitText } from "../ui/SplitText";
 
 /**
  * Process section — How you work with clients.
@@ -42,37 +44,39 @@ export function Process() {
       <div className="guide-right" aria-hidden="true" />
 
       {/* Section label */}
-      <p className="process-label">PROCESS</p>
+      <Reveal distance={14}>
+        <p className="process-label">PROCESS</p>
+      </Reveal>
 
       {/* Section heading */}
-      <h2 id="process-heading" className="process-heading">
-        How I Work
-      </h2>
+      <SplitText id="process-heading" className="process-heading" text="How I Work" />
 
       {/* Process grid — 2x2 layout */}
       <div className="process-grid">
-        {STEPS.map((step) => (
-          <div key={step.id} className="process-card">
-            {/* Card image — 200x200, white bg, no border */}
-            <div className="process-card__image">
-              <img
-                src={step.image}
-                srcSet={`${step.image}?width=476 476w`}
-                sizes="200px"
-                alt={`${step.title} illustration`}
-                width={476}
-                height={476}
-                decoding="async"
-                loading="lazy"
-              />
-            </div>
+        {STEPS.map((step, index) => (
+          <Reveal key={step.id} delay={index * 110} distance={30}>
+            <div className="process-card">
+              {/* Card image — 200x200, white bg, no border */}
+              <div className="process-card__image">
+                <img
+                  src={step.image}
+                  srcSet={`${step.image}?width=476 476w`}
+                  sizes="200px"
+                  alt={`${step.title} illustration`}
+                  width={476}
+                  height={476}
+                  decoding="async"
+                  loading="lazy"
+                />
+              </div>
 
-            {/* Card content */}
-            <div className="process-card__content">
-              <h3 className="process-card__title">{step.title}</h3>
-              <p className="process-card__description">{step.description}</p>
+              {/* Card content */}
+              <div className="process-card__content">
+                <h3 className="process-card__title">{step.title}</h3>
+                <p className="process-card__description">{step.description}</p>
+              </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
 

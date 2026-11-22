@@ -1,5 +1,7 @@
 "use client";
 
+import { Reveal } from "../ui/Reveal";
+
 /**
  * Footer — Bottom section matching Studio Nika exactly.
  * CTA heading + buttons + social icons + copyright.
@@ -43,56 +45,62 @@ export function Footer() {
       {/* CTA Container */}
       <div className="footer-cta">
         {/* Heading */}
-        <h2 className="footer-heading">
-          Let&apos;s ship your site.<br />
-          Do it once, Do it right.
-        </h2>
+        <Reveal distance={28}>
+          <h2 className="footer-heading">
+            Let&apos;s ship your site.<br />
+            Do it once, Do it right.
+          </h2>
+        </Reveal>
 
         {/* Buttons */}
-        <div className="footer-buttons">
-          <a
-            href="https://wa.me/+923292876526"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-button"
-          >
-            <span className="footer-button__text">Contact me</span>
-          </a>
-          <a
-            href="mailto:junaidruk526@gmail.com"
-            className="footer-button"
-          >
-            <span className="footer-button__text">Send me an email</span>
-          </a>
-        </div>
+        <Reveal delay={120}>
+          <div className="footer-buttons">
+            <a
+              href="https://wa.me/+923292876526"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-button"
+            >
+              <span className="footer-button__text">Contact me</span>
+            </a>
+            <a
+              href="mailto:junaidruk526@gmail.com"
+              className="footer-button"
+            >
+              <span className="footer-button__text">Send me an email</span>
+            </a>
+          </div>
+        </Reveal>
       </div>
 
       {/* Bottom Bar */}
-      <div className="footer-bottom">
-        {/* Follow on socials */}
-        <p className="footer-socials-label">Follow on socials</p>
+      <Reveal delay={200}>
+        <div className="footer-bottom">
+          {/* Follow on socials */}
+          <p className="footer-socials-label">Follow on socials</p>
 
-        {/* Social Icons */}
-        <div className="footer-socials">
-          {SOCIAL_LINKS.map((link) => (
-            <a
-              key={link.name}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-social-icon"
-              aria-label={link.name}
-            >
-              {link.icon}
-            </a>
-          ))}
+          {/* Social Icons */}
+          <div className="footer-socials">
+            {SOCIAL_LINKS.map((link) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-icon"
+                aria-label={link.name}
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
+
+          {/* Copyright */}
+          <p className="footer-copyright">
+            © Junaid Ali {new Date().getFullYear()}
+          </p>
         </div>
-
-        {/* Copyright */}
-        <p className="footer-copyright">
-          © Junaid Ali {new Date().getFullYear()}
-        </p>
-      </div>
+      </Reveal>
     </footer>
   );
 }
